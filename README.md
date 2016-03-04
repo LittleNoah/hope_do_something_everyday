@@ -1,32 +1,26 @@
 # README #
-实验性ff
-This README would normally document whatever steps are necessary to get your application up and running.
-Learn Ruby and crack leetCode
+
+re-Learn Ruby and crack leetCode
 ### What is this repository for? ###
 
 * Quick summary
 * Version 0.01
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
-### How do I get set up? ###
+### Something to do ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* Design of Graduate Paper
+* Ruby/Rails
+* Algs
+* Code reviews
+* Something fun
+* Sociology
 
-### Contribution guidelines ###
+### LeetCode ###
 
-* Writing tests
-* Code review
-* Other guidelines
+* Wait for days
 
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
-
-### Ruby Quiz
-* ruby_quiz下是http://rubyquiz.com/的练习，会适当记录每个练习的收获
+### Ruby Quiz ###
+* Quizs from [ruby_quiz](http://rubyquiz.com/)
+## Menu ##
+* Quiz 1
