@@ -1,17 +1,12 @@
-class HelloWorld
-	def initialize(myname = "Ruby")
-		@name = myname
-	end
-
-	def hello
-		puts "Hello world, I am #{@name}"
-	end
+#encoding UTF-8
+class RingArray < Array
+  def [](i)
+    idx = i % size
+    super(idx)
+  end
 end
 
-bob = HelloWorld.new("Noah")
-alice = HelloWorld.new("alice")
-ruby = HelloWorld.new
+wday = RingArray[" 日", " 月", " 火", " 水", " 木", " 金", " 土"]
 
-bob.hello
-alice.hello
-ruby.hello
+p wday[6]
+p wday[-1]

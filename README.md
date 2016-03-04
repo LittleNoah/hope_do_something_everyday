@@ -27,3 +27,6 @@ Learn Ruby and crack leetCode
 
 * Repo owner or admin
 * Other community or team contact
+
+### Ruby Quiz
+* ruby_quiz下是http://rubyquiz.com/的练习，会适当记录每个练习的收获
