@@ -20,9 +20,16 @@ class SolitaireCipher
     end
   end
 
+  # convert the alphabets to numbers array
+  def convert_to_num(char_arr)
+    char_arr.each_with_index do |key,index|
+      char_arr[index] = @abc_num_hash[key.upcase]
+    end
+    char_arr
+  end
+
   def gen_key
     @key_stream = Array.new
-    
   end
 end
 
