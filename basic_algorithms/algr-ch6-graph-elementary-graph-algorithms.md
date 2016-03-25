@@ -29,3 +29,5 @@
 > ![Complete Binary Tree Sample](http://web.cecs.pdx.edu/~sheard/course/Cs163/Graphics/CompleteBinary.jpg)
 > From [this site](http://web.cecs.pdx.edu/~sheard/course/Cs163/Doc/FullvsComplete.html) .
 
+#### 22.1-3 Transpose of directed graph 
+要求做有向图两种表示形式的转置（边的指向全部reverse）的算法
