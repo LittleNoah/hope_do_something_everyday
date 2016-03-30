@@ -65,4 +65,4 @@
 [https://github.com/gzc/CLRS/blob/master/C22-Elementary-Graph-Algorithms/22.1.md#answer-7](https://github.com/gzc/CLRS/blob/master/C22-Elementary-Graph-Algorithms/22.1.md#answer-7 "Answer")
 
 ## 22.2 Breadth-first Search
-
+BFS是最基本的图搜索算法之一，同时也是许多重要图算法的原型(archetype)，例如***Prim's minimum-spanning-tree algorithm***和***Dijkstra's single-source shortest-paths algorithm***
