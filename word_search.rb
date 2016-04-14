@@ -1,5 +1,10 @@
 #word search
 # use backtrack?
+# now I know how to solve it
+# first, init the dfs v, every v has four adjacents:left, right, top, bottom,
+# then, dfs, but we need to control the length and every match pattern
+# then we found the word
+
 
 # http://lgn21st.iteye.com/blog/173550 
 # Ruby使用 Array.new(n,object) 初始化时，使用的是同一个object的引用
@@ -8,49 +13,47 @@
 # @param {Character[][]} board
 # @param {String} word
 # @return {Boolean}
-
-dir_ar = [[0,1],[1,0],[-1,0],[0,-1]]
-
-
 def exist(board, word)
-  visited = Array.new(board.size){ Array.new(board[0].size, false) }
-  path = []
-  word_len = word.length
+  # if stirng size zero
+  return true if board.size==0 && word.length==0
+  # if word longer than board
+  return false if (board.size*board[0].size) < word.length
+  words = word.split("")
   index = 0
-  search_char(board,char).each do |start_pos|
-    word_len-=1
-    pos_char_surround(board, board[index])
-  end
-end
-
-
-def search_char(board, char)
-  result = []
-  board.each_with_index do |sub,x|
-    sub.each_with_index do |v,y|
-      result << [x,y] if char==v
+  board.each_with_index do |line, x|
+    line.each_with_index do |w, y|
+      if w == word[0]
+        index = 0
+        visited = Array.new(board.size){ Array.new(board[0].size, false) }
+        has_found = search_word(x, y, board, words, index, visited)
+        return true if has_found
+      end
     end
   end
-  result
-end
-
-def pos_char_surround(board, char, pos_x, pos_y)
-  result = []
-  dir_ar.each do |sub_dir|
-    tmp_x = pos_x + sub_dir[0]
-    tmp_y = pos_y + sub_dir[1]
-    if not out_of_bound?(tmp_x, tmp_y)
-      result << [tmp_x,tmp_y] if board[tmp_x,tmp_y] == char
-    end
-  end
-  result
-end
-
-
-end
-
-def out_of_bound?(board, pos_x, pos_y)
-  return true if pos_x+1 > board.size
-  return true if pos_y+1 > board[0].size
   false
 end
+
+def search_word(x,y,board,words,index, visited)
+  return false if x<0 || y<0 || x>=board.size || y>=board[0].size
+  return false if visited[x][y]
+  result = false
+  # search loop
+  if board[x][y] == words[index]
+    puts "x:#{x},y:#{y}  " + words[index] + " index: #{index}"
+    visited[x][y] = true
+    index+=1
+    return true if index == words.size
+    result = search_word(x-1, y, board, words, index, visited) || search_word(x+1, y, board, words, index, visited) || search_word(x, y+1, board, words, index, visited) || search_word(x, y-1, board, words, index, visited)
+  end
+  visited[x][y] = false unless result
+  result
+end
+
+board = [
+    ['A','B','C','E'],
+    ['S','F','E','S'],
+    ['A','D','E','E']
+]
+word = "ABCESEEEFS"
+
+puts exist(board, word)
